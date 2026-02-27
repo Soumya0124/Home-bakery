@@ -1,5 +1,6 @@
-const express = require('express');
-const cors = require('cors');
+import express from 'express';
+import cors from 'cors';
+
 const app = express();
 
 app.use(cors()); // Allows your frontend (localhost:5173) to talk to backend
@@ -81,6 +82,8 @@ app.post('/api/checkout', (req, res) => {
     'Order placed successfully! 💕' }); 
 });
 
-app.listen(3000, () => {
-  console.log('Server running on http://localhost:3000');
+const PORT= process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on ${PORT}`);
+
 });
